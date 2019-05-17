@@ -10,7 +10,7 @@ var reBlocked = require('./static/re_blocked.json');
 
 var port = process.env.PORT || 80;
 var subdomainsAsPath = true;
-var serveHomepage = false;
+var serveHomepage = true;
 var serveHomepageOnAllSubdomains = false;
 
 var httpsProxy = proxy.createProxyServer({
@@ -61,7 +61,7 @@ function onProxyError (err, req, res) {
     'Content-Type': 'text/plain'
   });
 
-  res.end('Proxying failed:' + err);
+  res.end('Proxying failed.');
 }
 
 function onProxyReq (proxyReq, req, res, options) {
