@@ -61,7 +61,7 @@ function onProxyError (err, req, res) {
     'Content-Type': 'text/plain'
   });
 
-  res.end('Proxying failed.');
+  res.end('Proxying failed:' + err);
 }
 
 function onProxyReq (proxyReq, req, res, options) {
