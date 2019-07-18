@@ -3,10 +3,6 @@ var https = require('https');
 var parser = require('cheerio');
 var router = express.Router();
 
-router.get('/api/shutdown-nuke', function (req, res, next) {
-    res.end('Allied Forces');
-});
-
 router.get('/api/searchmusic/:music', function (req, res, next) {
   https.get('https://search.roblox.com/catalog/json?Category=9&Keyword=' + encodeURI(req.params.music), function (search) {
     search.pipe(res);
